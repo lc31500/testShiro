@@ -72,6 +72,10 @@ public class UserController {
         }
     }
 
+    @RequestMapping("/noAuth")
+    public String  noAuth(){
+        return "/noAuth";
+    }
 
 
     /**
