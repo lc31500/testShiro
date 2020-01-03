@@ -37,11 +37,18 @@ public class ShiroConfig {
 //        filterMap.put("/update", "authc");
         filterMap.put("/testThymeleaf","anon");
         filterMap.put("/login","anon");
+
+        //授权过滤器
+        filterMap.put("/add", "perms[user:add]");
+
+        //必须放最后
         filterMap.put("/*","authc");
 
 
         //修改调整的登录页面
         shiroFilterFactoryBean.setLoginUrl("/toLogin");
+        //设置未授权提示页面
+        shiroFilterFactoryBean.setUnauthorizedUrl("/noAuth");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
 
