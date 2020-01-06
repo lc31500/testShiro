@@ -10,4 +10,6 @@ public interface UserMapper {
 
 
     public User findByUsername(String name);
+
+    public User findById(Integer id);
 }
